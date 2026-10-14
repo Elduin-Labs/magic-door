@@ -1,6 +1,6 @@
-package com.example.modtemplate.event;
+package com.elduin.magic_door.event;
 
-import com.example.modtemplate.ModTemplate;
+import com.elduin.magic_door.ModTemplate;
 import net.minecraft.server.level.ServerPlayer;
 
 public class ExampleEventHandler {
