@@ -84,7 +84,7 @@ placeholder file does not work — it fails the build on 1.21.11+.
 - Textures are 16x16 unless there's a reason. Keep the pixel-art style consistent
   with the rest of the mod.
 - Every new block, item and mob needs an entry in the language file
-  (`assets/<mod_id>/lang/en_us.json`) or it shows up in-game as a raw id, which
+  (`assets/magic_door/lang/en_us.json`) or it shows up in-game as a raw id, which
   reads to him as "broken".
 - Anything a player can tune goes in the config, not hardcoded.
 - Keep it dependency-free where possible. If a library is genuinely needed, it

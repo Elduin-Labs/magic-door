@@ -11,9 +11,9 @@ import com.elduin.magic_door.platform.fabric.FabricPlatform;
 @SuppressWarnings("LoggingSimilarMessage")
 public class ModTemplate {
 
-	public static final String MOD_ID = /*$ mod_id*/ "modtemplate";
+	public static final String MOD_ID = /*$ mod_id*/ "magic_door";
 	public static final String MOD_VERSION = /*$ mod_version*/ "1.0.0";
-	public static final String MOD_FRIENDLY_NAME = /*$ mod_name*/ "Mod Template";
+	public static final String MOD_FRIENDLY_NAME = /*$ mod_name*/ "Magic Door";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	private static final Platform PLATFORM = createPlatformInstance();
@@ -21,6 +21,7 @@ public class ModTemplate {
 	public static void onInitialize() {
 		LOGGER.info("Initializing {} on {}", MOD_ID, ModTemplate.xplat().loader());
 		LOGGER.debug("{}: { version: {}; friendly_name: {} }", MOD_ID, MOD_VERSION, MOD_FRIENDLY_NAME);
+		ModBlocks.init();
 	}
 
 	public static void onInitializeClient() {
@@ -36,11 +37,7 @@ public class ModTemplate {
 		return new FabricPlatform();
 	}
 
-	private static Identifier id(String path) {
+	static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
-	}
-
-	private static Identifier id(String namespace, String path) {
-		return Identifier.fromNamespaceAndPath(namespace, path);
 	}
 }

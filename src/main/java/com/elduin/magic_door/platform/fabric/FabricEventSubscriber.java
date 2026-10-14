@@ -2,21 +2,24 @@ package com.elduin.magic_door.platform.fabric;
 
 //? fabric {
 
-import com.elduin.magic_door.event.ExampleEventHandler; // sample_content
-import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents; // sample_content
-import net.minecraft.server.level.ServerPlayer; // sample_content
+import com.elduin.magic_door.ModBlocks;
+//? if <26.2 {
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+//?} else {
+/*import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+*///?}
+import net.minecraft.world.item.CreativeModeTabs;
 
 public class FabricEventSubscriber {
 
 	public static void registerEvents() {
-		//? != 1.19.2 {
-		// sample_content
-		ServerLivingEntityEvents.AFTER_DAMAGE.register((entity, source, baseDamage, damageTaken, blocked) -> { // sample_content
-			if (entity instanceof ServerPlayer && damageTaken > 0) { // sample_content
-				ExampleEventHandler.onPlayerHurt((ServerPlayer) entity); // sample_content
-			} // sample_content
-		}); // sample_content
-		//?}
+		//? if <26.2 {
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS)
+				.register(entries -> entries.accept(ModBlocks.MAGIC_DOOR));
+		//?} else {
+		/*CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS)
+				.register(output -> output.accept(ModBlocks.MAGIC_DOOR));
+		*///?}
 	}
 }
 //?}

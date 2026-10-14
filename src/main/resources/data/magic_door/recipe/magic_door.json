@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:oak_door",
+    "minecraft:ender_pearl"
+  ],
+  "result": {
+    "id": "magic_door:magic_door",
+    "count": 1
+  }
+}
